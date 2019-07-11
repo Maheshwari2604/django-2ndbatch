@@ -25,7 +25,7 @@ SECRET_KEY = 'gf($dp&*mugp#lej4xy%(l4-1id((#$$_dgyr#x^u2otwbfe@h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.13']
 
 
 # Application definition
