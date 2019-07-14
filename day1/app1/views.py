@@ -30,6 +30,12 @@ def home(request):
     return render(request , 'app1/aa.html' , context=context)
         
 
-def view(request):
+def view(request , id):
     print('heyyyyy')
-    return HttpResponse('lkjhgfdsa')
+    #i = homee.objects.get(id = id)
+    return render(request , 'app1/bb.html')
+
+def cc(request):
+    print('heyyyyy')
+    return render(request , 'app1/cc.html')
+       

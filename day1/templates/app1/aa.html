@@ -5,14 +5,28 @@
 
 <h1>{{ p }}</h1>
 
+{% block first %}
+
+
+{% endblock %}
 
 {% for i in p %}
     <div class="container" style="background: blue">
         <h1>{{ i.firstname }}</h1>
         <h1>{{ i.email }}</h1>
+        <a href="{% url 'view'   %}">click me</a>
     </div>
     <br>
 
 {% endfor %}
-    
 
+
+<a href="{% url 'view'  %}">click me</a>
+
+<a href="{% url 'cc' %}">go on cc</a>
+
+
+{% block secand %}
+
+
+{% endblock %}
