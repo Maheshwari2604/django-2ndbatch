@@ -20,6 +20,17 @@ def home(request):
             'p': a
         }
         
+        
+    #     print "in try"
+    # #csrfContext = RequestContext(request)
+    #     print ("hey")
+        
+    #     else:
+    #         print "no_post but error"
+    #         del request.session['user_id']
+    #         del request.session['cart_id'] 
+    
+        
     except:
         context = {
             'message': 'error',
@@ -30,12 +41,57 @@ def home(request):
     return render(request , 'app1/aa.html' , context=context)
         
 
-def view(request , id):
+def view(request):
+
+
+    #<a href='{% url 'khbgjj' product.id %}'></a>
     print('heyyyyy')
-    #i = homee.objects.get(id = id)
+    if request.method == 'POST':
+        u = homee()
+        email = request.POST['email']
+        print(email)
+        u.firstname = request.POST['firstname']
+        u.lastname = request.POST['lastname']
+        u.email = request.POST['email']
+        #u.firstname = 'll'
+        u.save()
+        uu = request.session['email']
+        print('session is: ')
+        print(uu)
+
+
+
+        if request.session['email']:
+
+
+
+
+
+    else:
+        print('error')
+    #ixx = homee.objects.get(id = id)
     return render(request , 'app1/bb.html')
 
 def cc(request):
     print('heyyyyy')
     return render(request , 'app1/cc.html')
        
+
+
+
+
+
+
+
+
+
+
+
+    # if request.method == 'POST':
+    #         print "register in post"
+    #         user = homee()
+    #         username = request.POST['first_name']
+    #         print(username)
+    #         user.save()
+    # else:
+    #     print('error')  

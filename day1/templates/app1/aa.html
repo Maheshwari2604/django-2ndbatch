@@ -21,7 +21,7 @@
 {% endfor %}
 
 
-<a href="{% url 'view'  %}">click me</a>
+<a href="{% url 'view' %}">click me</a>
 
 <a href="{% url 'cc' %}">go on cc</a>
 
@@ -30,3 +30,48 @@
 
 
 {% endblock %}
+
+<form method="POST" action="/view/" >
+    {% csrf_token %}
+    <div>
+        <label>firstname</label>
+        <input type="text" name="firstname">
+        <label>lastname</label>
+        <input type="text" name="lastname">
+        <label>email :</label>
+        <input type="text" name="email">
+        <input type="submit" value="submit">
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form method="POST" action="/view/">
+    {% csrf_token %}
+    <div class="input-field">
+        <input id="first_name" name="first_name" type="text" class="validate" required>
+        <label for="first_name">First Name</label>
+    </div>
+    <button type="submit" id="submit">Sign Up</button>
+    <div class="already">Already have an account with us?<a href="{% url 'cc' %}">Login</a></div>
+</form> -->
